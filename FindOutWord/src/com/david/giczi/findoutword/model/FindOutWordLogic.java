@@ -81,7 +81,6 @@ public class FindOutWordLogic {
 	
 	public void init() {
 		
-		theWord=null;
 		secondCounter=0;
 		clickCounter=0;
 	}
