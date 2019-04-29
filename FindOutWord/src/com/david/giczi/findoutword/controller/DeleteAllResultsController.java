@@ -27,7 +27,7 @@ public class DeleteAllResultsController implements ActionListener {
 			
 			DataBaseOperations.getInstance().deleteAllResults();
 			
-			control.infoPanel("All results of the list has been deleted.");
+			control.infoPanel("All results of the list have been deleted.");
 		}
 		
 		

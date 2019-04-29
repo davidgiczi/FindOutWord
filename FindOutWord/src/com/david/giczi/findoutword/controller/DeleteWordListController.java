@@ -27,7 +27,7 @@ public class DeleteWordListController implements ActionListener {
 			WordAdmin admin=new WordAdmin();
 			admin.clearWordList();
 			admin.saveWords();
-			control.infoPanel("All words of the list has been deleted.");
+			control.infoPanel("All words of the list have been deleted.");
 		}
 	
 		
