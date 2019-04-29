@@ -3,6 +3,7 @@ package com.david.giczi.findoutword.controller;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import com.david.giczi.findoutword.model.DataBaseOperations;
 import com.david.giczi.findoutword.view.ControlPanel;
 
 public class SendLetterController implements ActionListener {
@@ -36,9 +37,17 @@ public class SendLetterController implements ActionListener {
 		if(control.getLogic().isGuessedTheWord()) {
 			
 			control.getTimer().stop();
+		
+			control.inputWordPanel("Congratulations, you have guessed the word in "+control.getLogic().getClickCounter()+" steps.\nPlease, add your name:");
 			
-			if(control.approvingPanel("Congratulations, you have guessed the word in "+control.getLogic().getClickCounter()+" steps.\n"
-					+ "Would you like to play a new game?")) {
+			if(control.getInputWord()!=null) {
+				
+			DataBaseOperations db=DataBaseOperations.getInstance();
+			db.insert(control.getInputWord(), control.getLogic().getTheWord(), control.getLogic().getSecondCounter(), control.getLogic().getClickCounter(), control.getLogic().createTimeStamp());
+		
+			}
+			
+			if(control.approvingPanel("Would you like to play a new game?")) {
 				
 				startingState();
 				control.getTimer().start();

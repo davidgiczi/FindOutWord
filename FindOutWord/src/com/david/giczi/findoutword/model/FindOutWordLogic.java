@@ -1,8 +1,13 @@
 package com.david.giczi.findoutword.model;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Date;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Locale;
+
 
 public class FindOutWordLogic {
 	
@@ -161,6 +166,36 @@ public class FindOutWordLogic {
 		return store.size();
 	}
 	
+	public String createTimeStamp() {
+		
+		Date date=new Date(System.currentTimeMillis());
+		SimpleDateFormat format=new SimpleDateFormat("dd.MM.YYYY (EEEE) HH:mm:ss", Locale.ENGLISH);
+		
+		return format.format(date);
+	}
+	
+	
+	public Object[][] convertingRankingData(List<Result> data){
+		
+		Collections.sort(data);
+		
+		Object[][] store=new Object[data.size()][6];
+		
+		for(int i=0; i<data.size(); i++) {
+			
+			
+		store[i][0] = i+1;
+		store[i][1] = data.get(i).getPlayerName();
+		store[i][2] = data.get(i).getTheWord();
+		store[i][3] = data.get(i).getSecCounter();
+		store[i][4] = data.get(i).getClickCounter();
+		store[i][5] = data.get(i).getDate();
+		
+		}
+		
+		
+		return store;
+	}
 	
 	
 }

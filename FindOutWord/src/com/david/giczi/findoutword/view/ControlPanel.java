@@ -19,12 +19,14 @@ import javax.swing.Timer;
 
 import com.david.giczi.findoutword.controller.AddWordController;
 import com.david.giczi.findoutword.controller.CheckboxController;
+import com.david.giczi.findoutword.controller.DeleteAllResultsController;
 import com.david.giczi.findoutword.controller.DeleteWordController;
 import com.david.giczi.findoutword.controller.DeleteWordListController;
 import com.david.giczi.findoutword.controller.ExitButtonController;
 import com.david.giczi.findoutword.controller.NewWordController;
 import com.david.giczi.findoutword.controller.SendLetterController;
 import com.david.giczi.findoutword.controller.SendResultWordController;
+import com.david.giczi.findoutword.controller.ShowRankingTableController;
 import com.david.giczi.findoutword.controller.ShowWordListController;
 import com.david.giczi.findoutword.controller.StartButtonController;
 import com.david.giczi.findoutword.controller.StopButtonController;
@@ -142,6 +144,8 @@ public class ControlPanel {
 		delWord.addActionListener(new DeleteWordController(this));
 		delWordList.addActionListener(new DeleteWordListController(this));
 		showWordList.addActionListener(new ShowWordListController(this));
+		showResultList.addActionListener(new ShowRankingTableController(this));
+		delResultList.addActionListener(new DeleteAllResultsController(this));
 		
 		frame.add(panels[0]);
 		frame.add(panels[1]);
@@ -167,7 +171,8 @@ public class ControlPanel {
 
 	public void inputWordPanel(String text) {
 		
-		inputWord=JOptionPane.showInputDialog(text).trim();
+		
+		inputWord=JOptionPane.showInputDialog(text);
 		
 	}
 	

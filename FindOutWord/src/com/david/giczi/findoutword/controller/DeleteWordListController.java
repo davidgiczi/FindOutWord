@@ -22,7 +22,7 @@ public class DeleteWordListController implements ActionListener {
 		
 		
 		
-		if(control.approvingPanel("Are you sure you would like to delete all words in the list?")) {
+		if(control.approvingPanel("Are you sure you would like to delete all words from the list?")) {
 			
 			WordAdmin admin=new WordAdmin();
 			admin.clearWordList();
