@@ -178,7 +178,7 @@ public class ControlPanel {
 	
 	public void infoPanel(String text) {
 		
-		JOptionPane.showMessageDialog(frame, text , "Find out a Word", JOptionPane.INFORMATION_MESSAGE);
+		JOptionPane.showMessageDialog(frame, text , "Find out the Word", JOptionPane.INFORMATION_MESSAGE);
 		
 	}
 	

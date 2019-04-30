@@ -22,8 +22,12 @@ public class DeleteWordController implements ActionListener {
 		
 		control.inputWordPanel("Please, add the word:");
 		
-		WordAdmin admin=new WordAdmin();
+		if(control.getInputWord()==null || control.getLogic().isValidInputValue(control.getInputWord())) {
+			
+			return;
+		}
 		
+		WordAdmin admin=new WordAdmin();
 		
 		
 		if(WordAdmin.getWords().isEmpty()) {
@@ -33,17 +37,9 @@ public class DeleteWordController implements ActionListener {
 			return;
 		}
 		
-		boolean isSuccessful;
+	
+		boolean isSuccessful=admin.deleteWord(control.getInputWord());
 		
-		if(control.getInputWord()!=null) {
-			
-			isSuccessful=admin.deleteWord(control.getInputWord());
-		}
-		else {
-			
-			return;
-		}
-			
 		
 		if(isSuccessful) {
 			

@@ -166,6 +166,7 @@ public class FindOutWordLogic {
 			
 		}
 		
+		
 	
 		return store.size();
 	}
@@ -201,6 +202,26 @@ public class FindOutWordLogic {
 		return store;
 	}
 	
+	
+	public boolean isValidInputValue(String input) {
+		
+		int counter=0;
+		
+		for(int i=0; i<input.length(); i++) {
+			
+			if(input.charAt(i)==' ') {
+				
+				counter++;
+			}
+		}
+		
+		if(counter==input.length() || input.startsWith(" ")) {
+			
+			return true;
+		}
+		
+		return false;
+	}
 	
 
 }
