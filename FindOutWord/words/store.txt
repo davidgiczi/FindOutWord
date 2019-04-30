@@ -1,1 +1,5 @@
-a
+apple
+cat
+sunshine
+personal computer
+Hello World
