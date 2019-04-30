@@ -21,7 +21,7 @@ public class SendLetterController implements ActionListener {
 		
 		control.getLogic().setClickCounter(control.getLogic().getClickCounter()+1);
 		
-		if(control.getLogic().isValidInputValue(control.getLetter().getText())) {
+		if(!control.getLogic().isValidInputValue(control.getLetter().getText())) {
 			
 			   control.getLetter().setText("");
 			   control.infoPanel("Invalid input value.");

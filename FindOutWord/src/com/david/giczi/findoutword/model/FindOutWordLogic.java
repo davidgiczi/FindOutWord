@@ -217,10 +217,10 @@ public class FindOutWordLogic {
 		
 		if(counter==input.length() || input.startsWith(" ")) {
 			
-			return true;
+			return false;
 		}
 		
-		return false;
+		return true;
 	}
 	
 

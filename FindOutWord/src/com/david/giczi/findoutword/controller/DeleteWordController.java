@@ -22,7 +22,7 @@ public class DeleteWordController implements ActionListener {
 		
 		control.inputWordPanel("Please, add the word:");
 		
-		if(control.getInputWord()==null || control.getLogic().isValidInputValue(control.getInputWord())) {
+		if(control.getInputWord()==null || !control.getLogic().isValidInputValue(control.getInputWord())) {
 			
 			return;
 		}

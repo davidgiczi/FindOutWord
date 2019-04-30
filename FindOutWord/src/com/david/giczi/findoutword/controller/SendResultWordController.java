@@ -25,7 +25,7 @@ public class SendResultWordController implements ActionListener {
 				
 				control.getTipp().setText("");
 				
-				if(control.getLogic().isValidInputValue(tipp)) {
+				if(!control.getLogic().isValidInputValue(tipp)) {
 					
 					   control.infoPanel("Invalid input value.");
 						return;

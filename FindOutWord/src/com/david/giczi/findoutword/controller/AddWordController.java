@@ -27,7 +27,7 @@ public class AddWordController implements ActionListener {
 			return;
 		}
 		
-		if(control.getLogic().isValidInputValue(control.getInputWord())) {
+		if(!control.getLogic().isValidInputValue(control.getInputWord())) {
 			
 		   control.infoPanel("Invalid input value.");
 			return;
