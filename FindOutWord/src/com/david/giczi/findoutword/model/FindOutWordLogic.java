@@ -158,7 +158,12 @@ public class FindOutWordLogic {
 		HashSet<Character> store=new HashSet<>();
 		
 		for(int i=0; i<word.length(); i++) {
-			store.add(word.charAt(i));
+			
+			if(word.charAt(i)!=' ') {
+				
+				store.add(word.charAt(i));
+			}
+			
 		}
 		
 	
@@ -197,6 +202,7 @@ public class FindOutWordLogic {
 	}
 	
 	
+
 }
 
 
