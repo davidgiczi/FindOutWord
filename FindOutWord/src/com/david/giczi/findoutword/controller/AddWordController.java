@@ -23,15 +23,25 @@ public class AddWordController implements ActionListener {
 		
 		control.inputWordPanel("Please, add a new word:");
 		
+
 		WordAdmin admin=new WordAdmin();
 		
-		boolean isSuccessful=admin.addWord(control.getInputWord());
+		boolean isSuccessful;
 		
+		if(control.getInputWord()!=null) {
+			
+			isSuccessful=admin.addWord(control.getInputWord());
+		}
+		else {
+			
+			return;
+		}
+			
 		if(isSuccessful) {
 			control.infoPanel("\'"+control.getInputWord()+"\' word has added successfully!");
 			admin.saveWords();
 		}
-		else {
+		else  {
 			control.infoPanel("\'"+control.getInputWord()+"\' word has already been added to the list of the words.");
 		}
 		

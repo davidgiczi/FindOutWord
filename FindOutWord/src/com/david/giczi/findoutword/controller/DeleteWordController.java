@@ -24,6 +24,8 @@ public class DeleteWordController implements ActionListener {
 		
 		WordAdmin admin=new WordAdmin();
 		
+		
+		
 		if(WordAdmin.getWords().isEmpty()) {
 			
 			control.infoPanel("The list of the words is empty.");
@@ -31,14 +33,24 @@ public class DeleteWordController implements ActionListener {
 			return;
 		}
 		
-		boolean isSuccessful=admin.deleteWord(control.getInputWord());
+		boolean isSuccessful;
+		
+		if(control.getInputWord()!=null) {
+			
+			isSuccessful=admin.deleteWord(control.getInputWord());
+		}
+		else {
+			
+			return;
+		}
+			
 		
 		if(isSuccessful) {
 			
 			control.infoPanel("\'"+control.getInputWord()+"\' word deleting is successful!");
 			admin.saveWords();
 		}
-		else {
+		else  {
 			
 			control.infoPanel("\'"+control.getInputWord()+"\' word isn't in the list of the words.");
 		}
