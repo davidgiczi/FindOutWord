@@ -81,7 +81,7 @@ public class SendResultWordController implements ActionListener {
 		control.getLogic().setTheWord(null);
 		control.getLetter().setText("");
 		control.getLetters().setText("");
-		control.getFrame().setTitle("Find Out a Word");
+		control.getFrame().setTitle("Find Out the Word");
 		control.getLogic().getTipps().clear();
 		
 	}
