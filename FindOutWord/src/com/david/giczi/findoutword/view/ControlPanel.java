@@ -58,6 +58,7 @@ public class ControlPanel {
 	private JMenuItem delWord=new JMenuItem("Delete a Word");
 	private JMenuItem showWordList=new JMenuItem("Show the List");
 	private JMenuItem delWordList=new JMenuItem("Delete the List");
+	private JMenuItem theWord=new JMenuItem("...");
 	private Timer timer=new Timer(1000, new StartButtonController(this));
 	private String inputWord;
 	
@@ -65,7 +66,7 @@ public class ControlPanel {
 	public ControlPanel() {
 		
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
+		
 		rankList.add(showResultList);
 		rankList.add(delResultList);
 		menu.add(rankList);
@@ -73,6 +74,7 @@ public class ControlPanel {
 		wordOperation.add(delWord);
 		wordOperation.add(showWordList);
 		wordOperation.add(delWordList);
+		wordOperation.add(theWord);
 		menu.add(wordOperation);
 		menuBar.add(menu);
 	
@@ -266,6 +268,11 @@ public class ControlPanel {
 
 	public String getInputWord() {
 		return inputWord;
+	}
+
+
+	public JMenuItem getTheWord() {
+		return theWord;
 	}
 
 
