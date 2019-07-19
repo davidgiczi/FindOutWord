@@ -91,6 +91,7 @@ public class SendLetterController implements ActionListener {
 		control.getLetter().setText("");
 		control.getLetters().setText("");
 		control.getFrame().setTitle("Find Out the Word");
+		control.getTheWord().setText("...");
 		control.getLogic().getTipps().clear();
 		
 	}

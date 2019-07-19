@@ -34,6 +34,7 @@ public class StartButtonController implements ActionListener {
 			control.getLogic().setTheWord(theWord);
 			control.getLogic().setChars(theWord);
 			control.getDisplayer().displayWord(theWord);
+			control.getTheWord().setText(theWord.toUpperCase());
 			control.getTimer().start();
 	
 			buttonsEnabled();
